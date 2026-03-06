@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+  <title>Shashi Teja · Portfolio</title>
+  <meta
+    name="description"
+    content="Kasetty Shashi Teja · Frontend developer and web designer crafting premium UI animations, interactions, and cinematic web experiences."
+  />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -19,8 +23,10 @@
 <div class="cursor-outline"></div>
 
 <header class="nav">
-<div class="nav-logo">KASETTY<span> SHASHI TEJA</span></div>
-<div class="nav-logo">Going with the <span>flow</span></div>
+  <div class="nav-logo">
+    KASETTY<span> SHASHI TEJA</span>
+    <span class="nav-tagline">· Going with the <span>flow</span></span>
+  </div>
   <nav class="nav-links">
     <a href="#reel">I Create</a>
     <a href="#work">Work</a>
@@ -34,15 +40,15 @@
   <!-- HERO / REEL -->
   <section class="section hero" id="reel">
     <div class="hero-content">
-      <p class="eyebrow">ShashiTeja </p>
+      <p class="eyebrow">Shashi Teja · Frontend</p>
       <h1 class="hero-title" data-reveal>
-          Web<br />
-  <span>DESIGNER.</span>
-    </h1>
+        Web<br />
+        <span>DESIGNER.</span>
+      </h1>
 
       <p class="hero-sub">
-        <b>WEB DESIGNER</b> Frontend developer focused on premium UI animations,
-      interactions, and cinematic user experiences.
+        <strong>Web designer & frontend developer</strong> focused on premium UI animations,
+        interactions, and cinematic user experiences.
       </p>
       <div class="hero-cta">
        <a href="#work" class="btn-primary">
@@ -56,19 +62,13 @@
         <span>Scroll to explore</span>
         <span class="hero-line"></span>
         <!-- <span>Designs</span> -->
-      </div>
+      </div> 
     </div>
 
     <div class="hero-visual">
       <div class="hero-card layer" data-depth="0.2">
-        <img src="mypic.jpeg" autoplay muted loop playsinline></src>
+        <img src="mypic.jpeg" alt="Portrait of Kasetty Shashi Teja" />
         <div class="hero-card-glow"></div>
-      </div>
-      <!-- <div class="hero-tag layer" data-depth="0.4">MOTION</div> -->
-      <!-- <div class="hero-floating-badge layer" data-depth="0.6"> -->
-        <!-- <span>LIVE</span> -->
-        <!-- <span class="dot"></span> -->
-        <!-- <span>00:47</span> -->
       </div>
     </div>
   </section>
@@ -76,129 +76,113 @@
   <!-- FEATURED WORK SCROLLER -->
   <section class="section work" id="work">
     <div class="section-header">
-      <h2 class="eyebrow">MYPROJECTS</h2>
+      <h2 class="eyebrow">My Projects</h2>
     </div>
 
     <div class="work-track">
       <article class="work-card" data-tilt>
         <div class="work-media">
-          <!-- <img src="assets/project1.jpg" alt="passwoard genaretor" /> -->
-           <p>Passwoard Generator</p>
+          <p>Password Generator</p>
         </div>
         <div class="work-info">
-          <p>The Password Generator creates a random and secure password using JavaScript..</p>
+          <p>A password generator that creates random, secure passwords using JavaScript.</p>
           <a href="https://password-generator-theta-black-84.vercel.app/" target="_blank" class="chip">
             Password Generator</a>
-
-          
         </div>
       </article>
-      
+
       <article class="work-card" data-tilt>
         <div class="work-media">
-          <!-- <img src="assets/project2.jpg" alt="mini-discord" /> -->
-           <p>Mini-discord</p>
+          <p>Mini Discord</p>
         </div>
         <div class="work-info">
           <p>A clean, dark, Discord-style interface with simple navigation, smooth real-time chat, and an intuitive message input. </p>
-          
           <a href="https://mini-discord-pjsg.onrender.com/" target="_blank" class="chip">
-            mini-discord</a>
+            Mini Discord</a>
+        </div>
       </article>
 
       <article class="work-card" data-tilt>
         <div class="work-media">
-          <!-- <img src="assets/project3.jpg" alt="Kinetic typography" /> -->
-            <p>My classroom</p>
+          <p>My Classroom</p>
         </div>
         <div class="work-info">
-          <h3>Google classroom</h3>
-          <p>Here you find all pdfs & assignments.</p>
+          <h3>Google Classroom</h3>
+          <p>Central hub for PDFs, assignments, and course updates.</p>
           <a href="https://classroom.google.com/c/NzA3ODAxNTE3MTQ3?cjc=rqcuyj4" target="_blank" class="chip">
-            My classroom</a>
+            My Classroom</a>
+        </div>
       </article>
     </div>
 
     <div class="work-track">
       <article class="work-card" data-tilt>
         <div class="work-media">
-          <!-- <img src="assets/project4.jpg" alt="Futuristic interface" /> -->
-           <p>Geo-AI Suitability</p>
+          <p>Geo‑AI Suitability</p>
         </div>
         <div class="work-info">
-          
-          <p>AIRES,This ia an ML model says about the suitability of a location. </p>
+          <p>AIRES – an ML model that predicts the suitability of a location for solar energy.</p>
           <a href="https://github.com/Shashi08339/solar-prediction-" target="_blank" class="chip">
-            Geo-AI</a>
+            Geo‑AI</a>
         </div>
       </article>
 
       <article class="work-card" data-tilt>
         <div class="work-media">
-          <!-- <img src="assets/project5.jpg" alt="3D portfolio" /> -->
-           <p>Clinic Management</p>
+          <p>Clinic Management</p>
         </div>
         <div class="work-info">
-          
-          <p>This ia an clean and user friendly clinic app,likely for managing healthcare or clinic-related tasks (such as appointments, records, or admin).</p>
-          <a href="likely for managing healthcare or clinic-related tasks (such as appointments, records, or admin)" target="_blank" class="chip">
-            Clinic care</a>
+          <p>A clean and user‑friendly clinic management interface for handling appointments and basic records.</p>
+          <a href="#" class="chip chip-disabled" aria-disabled="true">
+            Clinic Care · Coming Soon</a>
         </div>
       </article>
 
       <article class="work-card" data-tilt>
         <div class="work-media">
-          <!-- <img src="assets/project6.jpg" alt="Kinetic typography" /> -->
-           <p>Citizen Pulse Flow</p>
+          <p>Citizen Pulse Flow</p>
         </div>
         <div class="work-info">
-          <!-- <h3>Kinetic Type Lab</h3>
-          kinetic Typography Lab -->
-          <p>it’s probably designed as a citizen-engagement or community feedback tool where users can interact with or submit insights on civic topics.</p>
+          <p>A citizen‑engagement tool where people can share feedback and insights on civic topics.</p>
           <a href="https://citizen-pulse-flow.lovable.app" target="_blank" class="chip">
             Citizen Pulse Flow</a>
         </div>
       </article>
     </div>
 
-        <div class="work-track">
-      <article class="work-card" data-tilt>
-        <div class="work-media">
-          <!-- <img src="assets/project1.jpg" alt="passwoard genaretor" /> -->
-           <p>kinetic Typography Lab </p>
-        </div>
-        <div class="work-info">
-          <p>In progress</p>
-          <!-- <p>The Password Generator creates a random and secure password using JavaScript..</p> -->
-          <a href="" target="_blank" class="chip">
-            kinetic typography lab</a>
+    <div class="work-track">
 
-          
-        </div>
-      </article>
-      
-      <article class="work-card" data-tilt>
+         <article class="work-card" data-tilt>
         <div class="work-media">
-          <!-- <img src="assets/project2.jpg" alt="mini-discord" /> -->
-           <p>upcoming</p>
+          <p>CarbonMind</p>
         </div>
         <div class="work-info">
-          <!-- <p>A clean, dark, Discord-style interface with simple navigation, smooth real-time chat, and an intuitive message input. </p> -->
-          
-          <a href=" target="_blank" class="chip">
-            upcoming</a>
+          <p>CarbonMind — AI Carbon Intelligence Dashboard.</p>
+          <a href="https://carbonmind-kohl.vercel.app/" class="chip chip-disabled" aria-disabled="true">
+            CarbonMind</a>
+        </div>
       </article>
 
       <article class="work-card" data-tilt>
         <div class="work-media">
-          <!-- <img src="assets/project3.jpg" alt="Kinetic typography" /> -->
-            <p>upcoming</p>
+          <p>Kinetic Typography Lab</p>
         </div>
         <div class="work-info">
-          <!-- <h3>Google classroom</h3>
-          <p>Here you find all pdfs & assignments.</p> -->
-          <a href="" target="_blank" class="chip">
-            upcoming</a>
+          <p>Exploring expressive motion and typography experiments. Currently in progress.</p>
+          <a href="#" class="chip chip-disabled" aria-disabled="true">
+            Kinetic Typography · WIP</a>
+        </div>
+      </article>
+
+      <article class="work-card" data-tilt>
+        <div class="work-media">
+          <p>Upcoming Project</p>
+        </div>
+        <div class="work-info">
+          <p>Stay tuned for the next cinematic web experience.</p>
+          <a href="#" class="chip chip-disabled" aria-disabled="true">
+            Upcoming · Soon</a>
+        </div>
       </article>
     </div>
   </section>
@@ -208,15 +192,14 @@
     <div class="about-inner">
       <div class="about-copy">
         <p class="eyebrow">ABOUT</p>
-        <h7>I’m a B.Tech student exploring software and front-end development through hands-on projects..</h7>
-        <br>
-        <br>
-        <hp>
-         My skills include front-end development, programming with Java and Python, and experimenting with animations and interactions using modern web tools.
-        </hp>
-        <br>
-        <br>
-        <h7>This portfolio reflects my learning journey and growth as a developer.</h7>
+        <h2 class="about-title">I’m a B.Tech student exploring software and front‑end development through hands‑on projects.</h2>
+        <p class="about-lead">
+          My skills include front‑end development, programming with Java and Python, and experimenting with animations
+          and interactions using modern web tools.
+        </p>
+        <p class="about-lead">
+          This portfolio reflects my learning journey and growth as a developer.
+        </p>
         <!-- <ul class="about-list">
           <li>Scroll‑tied narratives with parallax and depth.</li>
           <li>Prototype‑driven workflow using Figma, After Effects, and code.</li>
@@ -235,12 +218,12 @@
         </div>
         <div class="about-card">
           <h3>Programming</h3>
-          <p>python · C · Java · Problem solving · logicbuilding.</p>
+          <p>Python · C · Java · Problem solving · Logic building.</p>
         </div>
 
-      <div class="about-card">
+        <div class="about-card">
           <h3>Tools & Platforms</h3>
-          <p>VS Code · GitHub ·<br> Figma(basic prototyping).</p>
+          <p>VS Code · GitHub · Figma (basic prototyping).</p>
         </div>
         
         <div class="about-card">
