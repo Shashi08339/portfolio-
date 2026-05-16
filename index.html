@@ -3,298 +3,427 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shashi Teja · Portfolio</title>
-  <meta
-    name="description"
-    content="Kasetty Shashi Teja · Frontend developer and web designer crafting premium UI animations, interactions, and cinematic web experiences."
+
+  <!-- ═══════════════════════════════════════════
+       PRIMARY SEO
+  ═══════════════════════════════════════════ -->
+  <title>Kasetty Shashi Teja — Frontend Developer & Web Designer | Bengaluru</title>
+  <meta name="description" content="Kasetty Shashi Teja is a B.Tech frontend developer and web designer from Bengaluru crafting premium UI animations, cinematic web experiences, and interactive interfaces using HTML, CSS, JavaScript, GSAP, and React." />
+  <meta name="keywords" content="Kasetty Shashi Teja, frontend developer Bengaluru, web designer India, UI animations, GSAP developer, JavaScript developer, portfolio, web design student" />
+  <meta name="author" content="Kasetty Shashi Teja" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#050510" />
+  <link rel="canonical" href="https://shashiteja.dev/" />
+
+  <!-- ═══════════════════════════════════════════
+       OPEN GRAPH (Facebook / LinkedIn / WhatsApp)
+  ═══════════════════════════════════════════ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://shashiteja.dev/" />
+  <meta property="og:title" content="Kasetty Shashi Teja — Frontend Developer & Web Designer" />
+  <meta property="og:description" content="B.Tech frontend developer crafting premium UI animations, cinematic web experiences, and interactive interfaces. Available for freelance work." />
+  <meta property="og:image" content="https://res.cloudinary.com/dnronwdxu/image/upload/v1778930177/2-removebg-preview_wbyumv.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:site_name" content="Shashi Teja Portfolio" />
+
+  <!-- ═══════════════════════════════════════════
+       TWITTER CARD
+  ═══════════════════════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kasetty Shashi Teja — Frontend Developer & Web Designer" />
+  <meta name="twitter:description" content="B.Tech frontend dev crafting cinematic web experiences. Premium UI, animations & interactions." />
+  <meta name="twitter:image" content="https://res.cloudinary.com/dnronwdxu/image/upload/v1778930177/2-removebg-preview_wbyumv.png" />
+
+  <!-- ═══════════════════════════════════════════
+       STRUCTURED DATA (JSON-LD)
+  ═══════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kasetty Shashi Teja",
+    "alternateName": "Shashi Teja",
+    "url": "https://shashiteja.dev/",
+    "image": "https://res.cloudinary.com/dnronwdxu/image/upload/v1778930177/2-removebg-preview_wbyumv.png",
+    "jobTitle": "Frontend Developer & Web Designer",
+    "description": "B.Tech student and frontend developer specializing in premium UI animations, cinematic web experiences, and interactive interfaces.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    },
+    "email": "shashitejakasetty@gmail.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/kasetty-shashi-teja-49a474294/",
+      "https://github.com/Shashi08339"
+    ],
+    "knowsAbout": ["HTML", "CSS", "JavaScript", "GSAP", "Web Animation", "UI Design", "Python", "Java", "React"],
+    "offers": {
+      "@type": "Offer",
+      "description": "Freelance web design and frontend development services",
+      "areaServed": "Worldwide"
+    }
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════════
+       FONTS — loaded async for performance
+  ═══════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet"
   />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="bg-layers">
-  <div class="bg-gradient"></div>
-  <div class="bg-blur-orb orb-1"></div>
-  <div class="bg-blur-orb orb-2"></div>
-  <div class="bg-noise"></div>
+<!-- ═══════════════════════ BACKGROUND ═══════════════════════ -->
+<div class="bg-wrap" aria-hidden="true">
+  <canvas id="starfield"></canvas>
+  <div class="bg-mesh"></div>
+  <div class="bg-vignette"></div>
 </div>
 
-<div class="cursor-dot"></div>
-<div class="cursor-outline"></div>
+<!-- ═══════════════════════ CURSOR ═══════════════════════ -->
+<div class="cursor" aria-hidden="true">
+  <div class="cursor-ring"></div>
+  <div class="cursor-dot"></div>
+</div>
 
-<header class="nav">
-  <div class="nav-logo">
-    KASETTY<span> SHASHI TEJA</span>
-    <span class="nav-tagline">· Going with the <span>flow</span></span>
-  </div>
-  <nav class="nav-links">
-    <a href="#reel">I Create</a>
+<!-- ═══════════════════════ LOADER ═══════════════════════ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-bar"></div>
+  <span class="loader-name">ST</span>
+</div>
+
+<!-- ═══════════════════════ NAV ═══════════════════════ -->
+<header class="nav" role="banner">
+  <a href="#" class="nav-logo" aria-label="Shashi Teja — Home">
+    ST<span class="nav-dot">.</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary navigation">
     <a href="#work">Work</a>
     <a href="#about">About</a>
-    <a href="#contact" class="btn-pill">Let’s Talk</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="nav-cta">Hire Me</a>
   </nav>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
 </header>
 
-<main>
+<main id="main-content">
 
-  <!-- HERO / REEL -->
-  <section class="section hero" id="reel">
-    <div class="hero-content">
-      <p class="eyebrow">Shashi Teja · Frontend</p>
-      <h1 class="hero-title" data-reveal>
-        Web<br />
-        <span>DESIGNER.</span>
+  <!-- ═══════════════════════════════════
+       HERO
+  ═══════════════════════════════════ -->
+  <section class="hero" id="hero" aria-labelledby="hero-heading">
+
+    <div class="hero-left">
+      <p class="label" aria-label="Label">Frontend Developer · Bengaluru</p>
+
+      <h1 class="hero-title" id="hero-heading">
+        <span class="title-line" data-text="SHASHI">SHASHI</span>
+        <span class="title-line accent" data-text="TEJA">TEJA</span>
+        <span class="title-sub">Web Designer</span>
       </h1>
 
-      <p class="hero-sub">
-        <strong>Web designer & frontend developer</strong> focused on premium UI animations,
-        interactions, and cinematic user experiences.
+      <p class="hero-desc">
+        <strong>Frontend developer & web designer</strong> crafting premium UI animations,
+        immersive interactions, and cinematic digital experiences.
       </p>
-      <div class="hero-cta">
-       <a href="#work" class="btn-primary">
-       VIEW MY PROJECTS
-      </a>
 
-
-        <!-- <button class="btn-ghost">Latest Case Study</button> -->
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">
+          <span>View Projects</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="mailto:shashitejakasetty@gmail.com" class="btn btn-outline">Get In Touch</a>
       </div>
-      <div class="hero-meta">
-        <span>Scroll to explore</span>
-        <span class="hero-line"></span>
-        <!-- <span>Designs</span> -->
-      </div> 
+
+      <div class="hero-stats" role="list">
+        <div role="listitem">
+          <strong>8+</strong>
+          <span>Projects built</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div role="listitem">
+          <strong>2+</strong>
+          <span>Years learning</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div role="listitem">
+          <strong>∞</strong>
+          <span>Drive to grow</span>
+        </div>
+      </div>
     </div>
 
-    <div class="hero-visual">
-      <div class="hero-card layer" data-depth="0.2">
-        <img src="https://res.cloudinary.com/dnronwdxu/image/upload/v1778930177/2-removebg-preview_wbyumv.png" alt="Portrait of Kasetty Shashi Teja" />
-        <div class="hero-card-glow"></div>
+    <div class="hero-right" aria-hidden="true">
+      <div class="portrait-frame" id="portrait">
+        <div class="portrait-ring r1"></div>
+        <div class="portrait-ring r2"></div>
+        <div class="portrait-glow"></div>
+        <img
+          src="https://res.cloudinary.com/dnronwdxu/image/upload/v1778930177/2-removebg-preview_wbyumv.png"
+          alt="Portrait of Kasetty Shashi Teja, Frontend Developer"
+          width="460"
+          height="460"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="portrait-badge">
+          <span class="badge-dot"></span>
+          Available for work
+        </div>
       </div>
+    </div>
+
+    <a href="#work" class="scroll-hint" aria-label="Scroll down to work">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </a>
+
+  </section>
+
+  <!-- ═══════════════════════════════════
+       WORK
+  ═══════════════════════════════════ -->
+  <section class="work" id="work" aria-labelledby="work-heading">
+    <header class="section-head">
+      <p class="label">Selected Work</p>
+      <h2 id="work-heading">Projects</h2>
+    </header>
+
+    <div class="projects-grid">
+
+      <article class="project-card" data-reveal>
+        <div class="card-index">01</div>
+        <div class="card-body">
+          <div class="card-tag">JavaScript · Security</div>
+          <h3>Password Generator</h3>
+          <p>A password generator that creates random, cryptographically-inspired secure passwords using JavaScript logic and entropy.</p>
+        </div>
+        <a href="https://password-generator-theta-black-84.vercel.app/" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="View Password Generator project">
+          <span>View Live</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H6M13 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card" data-reveal>
+        <div class="card-index">02</div>
+        <div class="card-body">
+          <div class="card-tag">Node.js · Real-time</div>
+          <h3>Mini Discord</h3>
+          <p>A clean dark Discord-style interface with smooth real-time chat, navigation, and intuitive message input — built for learning WebSockets.</p>
+        </div>
+        <a href="https://mini-discord-pjsg.onrender.com/" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="View Mini Discord project">
+          <span>View Live</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H6M13 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card featured" data-reveal>
+        <div class="card-index">03</div>
+        <div class="card-body">
+          <div class="card-tag">ML · Python · GeoAI</div>
+          <h3>AIRES — Solar Suitability</h3>
+          <p>An ML model predicting location suitability for solar energy installation using geographic and meteorological data. End-to-end pipeline from data to deployment.</p>
+        </div>
+        <a href="https://github.com/Shashi08339/solar-prediction-" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="View AIRES Geo-AI project on GitHub">
+          <span>GitHub</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H6M13 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card" data-reveal>
+        <div class="card-index">04</div>
+        <div class="card-body">
+          <div class="card-tag">AI · Dashboard</div>
+          <h3>CarbonMind</h3>
+          <p>An AI Carbon Intelligence Dashboard visualising carbon footprint data with interactive charts and emission tracking insights.</p>
+        </div>
+        <a href="https://carbonmind-kohl.vercel.app/" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="View CarbonMind project">
+          <span>View Live</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H6M13 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card" data-reveal>
+        <div class="card-index">05</div>
+        <div class="card-body">
+          <div class="card-tag">Civic Tech · React</div>
+          <h3>Citizen Pulse Flow</h3>
+          <p>A citizen-engagement platform where people share feedback and insights on civic topics — community-first UX with clean data flows.</p>
+        </div>
+        <a href="https://citizen-pulse-flow.lovable.app" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="View Citizen Pulse Flow project">
+          <span>View Live</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H6M13 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card wip" data-reveal>
+        <div class="card-index">06</div>
+        <div class="card-body">
+          <div class="card-tag">Healthcare · UI</div>
+          <h3>Clinic Management</h3>
+          <p>A clean, user-friendly clinic interface for handling appointments and patient records — focused on reducing friction in healthcare workflows.</p>
+        </div>
+        <span class="card-soon" aria-label="Coming soon">Coming Soon</span>
+      </article>
+
+      <article class="project-card wip" data-reveal>
+        <div class="card-index">07</div>
+        <div class="card-body">
+          <div class="card-tag">Motion · Typography</div>
+          <h3>Kinetic Typography Lab</h3>
+          <p>Expressive motion and typography experiments — exploring how words can move, breathe, and tell stories through animation.</p>
+        </div>
+        <span class="card-soon" aria-label="Work in progress">In Progress</span>
+      </article>
+
+      <article class="project-card wip" data-reveal>
+        <div class="card-index">08</div>
+        <div class="card-body">
+          <div class="card-tag">Education · Google</div>
+          <h3>My Classroom</h3>
+          <p>Central hub for PDFs, assignments, and course updates — a curated Google Classroom for collaborative learning.</p>
+        </div>
+        <a href="https://classroom.google.com/c/NzA3ODAxNTE3MTQ3?cjc=rqcuyj4" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="View My Classroom">
+          <span>Open</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H6M13 3v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+
     </div>
   </section>
 
-  <!-- FEATURED WORK SCROLLER -->
-  <section class="section work" id="work">
-    <div class="section-header">
-      <h2 class="eyebrow">My Projects</h2>
-    </div>
-
-    <div class="work-track">
-      <article class="work-card" data-tilt>
-        <div class="work-media">
-          <p>Password Generator</p>
-        </div>
-        <div class="work-info">
-          <p>A password generator that creates random, secure passwords using JavaScript.</p>
-          <a href="https://password-generator-theta-black-84.vercel.app/" target="_blank" class="chip">
-            Password Generator</a>
-        </div>
-      </article>
-
-      <article class="work-card" data-tilt>
-        <div class="work-media">
-          <p>Mini Discord</p>
-        </div>
-        <div class="work-info">
-          <p>A clean, dark, Discord-style interface with simple navigation, smooth real-time chat, and an intuitive message input. </p>
-          <a href="https://mini-discord-pjsg.onrender.com/" target="_blank" class="chip">
-            Mini Discord</a>
-        </div>
-      </article>
-
-      <article class="work-card" data-tilt>
-        <div class="work-media">
-          <p>My Classroom</p>
-        </div>
-        <div class="work-info">
-          <h3>Google Classroom</h3>
-          <p>Central hub for PDFs, assignments, and course updates.</p>
-          <a href="https://classroom.google.com/c/NzA3ODAxNTE3MTQ3?cjc=rqcuyj4" target="_blank" class="chip">
-            My Classroom</a>
-        </div>
-      </article>
-    </div>
-
-    <div class="work-track">
-      <article class="work-card" data-tilt>
-        <div class="work-media">
-          <p>Geo‑AI Suitability</p>
-        </div>
-        <div class="work-info">
-          <p>AIRES – an ML model that predicts the suitability of a location for solar energy.</p>
-          <a href="https://github.com/Shashi08339/solar-prediction-" target="_blank" class="chip">
-            Geo‑AI</a>
-        </div>
-      </article>
-
-      <article class="work-card" data-tilt>
-        <div class="work-media">
-          <p>Clinic Management</p>
-        </div>
-        <div class="work-info">
-          <p>A clean and user‑friendly clinic management interface for handling appointments and basic records.</p>
-          <a href="#" class="chip chip-disabled" aria-disabled="true">
-            Clinic Care · Coming Soon</a>
-        </div>
-      </article>
-
-      <article class="work-card" data-tilt>
-        <div class="work-media">
-          <p>Citizen Pulse Flow</p>
-        </div>
-        <div class="work-info">
-          <p>A citizen‑engagement tool where people can share feedback and insights on civic topics.</p>
-          <a href="https://citizen-pulse-flow.lovable.app" target="_blank" class="chip">
-            Citizen Pulse Flow</a>
-        </div>
-      </article>
-    </div>
-
-    <div class="work-track">
-
-         <article class="work-card" data-tilt>
-        <div class="work-media">
-          <p>CarbonMind</p>
-        </div>
-        <div class="work-info">
-          <p>CarbonMind — AI Carbon Intelligence Dashboard.</p>
-          <a href="https://carbonmind-kohl.vercel.app/" class="chip chip-disabled" aria-disabled="true">
-            CarbonMind</a>
-        </div>
-      </article>
-
-      <article class="work-card" data-tilt>
-        <div class="work-media">
-          <p>Kinetic Typography Lab</p>
-        </div>
-        <div class="work-info">
-          <p>Exploring expressive motion and typography experiments. Currently in progress.</p>
-          <a href="#" class="chip chip-disabled" aria-disabled="true">
-            Kinetic Typography · WIP</a>
-        </div>
-      </article>
-
-      <article class="work-card" data-tilt>
-        <div class="work-media">
-          <p>Upcoming Project</p>
-        </div>
-        <div class="work-info">
-          <p>Stay tuned for the next cinematic web experience.</p>
-          <a href="#" class="chip chip-disabled" aria-disabled="true">
-            Upcoming · Soon</a>
-        </div>
-      </article>
-    </div>
-  </section>
- 
-  <!-- ABOUT / STACK -->
-  <section class="section about" id="about">
-    <div class="about-inner">
-      <div class="about-copy">
-        <p class="eyebrow">ABOUT</p>
-        <h2 class="about-title">I’m a B.Tech student exploring software and front‑end development through hands‑on projects.</h2>
-        <p class="about-lead">
-          My skills include front‑end development, programming with Java and Python, and experimenting with animations
-          and interactions using modern web tools.
+  <!-- ═══════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════ -->
+  <section class="about" id="about" aria-labelledby="about-heading">
+    <div class="about-wrap">
+      <div class="about-left" data-reveal>
+        <p class="label">About Me</p>
+        <h2 id="about-heading">
+          B.Tech student building real things<br />with code and curiosity.
+        </h2>
+        <p>
+          I'm exploring software and frontend development through hands-on projects —
+          obsessed with the intersection of engineering precision and visual craft.
+          Every project is a chance to learn something new and push my limits.
         </p>
-        <p class="about-lead">
-          This portfolio reflects my learning journey and growth as a developer.
+        <p>
+          Currently focused on motion design, animation principles, and building
+          experiences that feel cinematic, not templated.
         </p>
-        <!-- <ul class="about-list">
-          <li>Scroll‑tied narratives with parallax and depth.</li>
-          <li>Prototype‑driven workflow using Figma, After Effects, and code.</li>
-          <li>Performance‑minded motion tuned for real users.</li>
-        </ul> -->
+        <a href="mailto:shashitejakasetty@gmail.com" class="btn btn-outline" style="margin-top:2rem; display:inline-flex;">Start a Conversation →</a>
       </div>
 
-      <div class="about-grid">
-        <div class="about-card">
+      <div class="skills-grid" data-reveal>
+        <div class="skill-item">
           <h3>Motion Stack</h3>
-          <p>GSAP · ScrollTrigger · Framer Motion.</p>
+          <p>GSAP · ScrollTrigger · Framer Motion · CSS Animations</p>
         </div>
-        <div class="about-card">
-          <h3>Front‑end</h3>
-          <p>HTML · CSS · JavaScript · Three.js‑ready.</p>
+        <div class="skill-item">
+          <h3>Frontend</h3>
+          <p>HTML5 · CSS3 · JavaScript (ES6+) · React · Three.js</p>
         </div>
-        <div class="about-card">
-          <h3>Programming</h3>
-          <p>Python · C · Java · Problem solving · Logic building.</p>
+        <div class="skill-item">
+          <h3>Languages</h3>
+          <p>Python · Java · C · Problem solving · Logic building</p>
         </div>
-
-        <div class="about-card">
-          <h3>Tools & Platforms</h3>
-          <p>VS Code · GitHub · Figma (basic prototyping).</p>
+        <div class="skill-item">
+          <h3>Tools</h3>
+          <p>VS Code · Git · GitHub · Figma · Vercel</p>
         </div>
-        
-        <div class="about-card">
-          <h3>Principles</h3>
-          <p>Timing, easing, anticipation, hierarchy.</p>
+        <div class="skill-item">
+          <h3>Design Principles</h3>
+          <p>Timing · Easing · Anticipation · Visual hierarchy</p>
         </div>
-        <div class="about-card">
-          <h3>Focus</h3>
-          <p>UI design, animation principles, and code to build experiences that feel cinematic, not templated.</p>
+        <div class="skill-item highlight">
+          <h3>Mission</h3>
+          <p>Cinematic, purposeful web experiences — not templates.</p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- CONTACT / CTA -->
-<section class="section contact" id="contact">
-  <div class="contact-inner">
-    <p class="eyebrow">OPEN FOR FREELANCE WORK</p>
-    <h2>I’m a freelance web designer.</h2>
-    <p>
-      I work independently to deliver premium UI, animations,
-      and interactive web experiences.
-    </p>
+  <!-- ═══════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════ -->
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <div class="contact-wrap">
 
-    <form class="contact-form"
-          action="https://formspree.io/f/mqealore"
-          method="POST">
+      <div class="contact-left" data-reveal>
+        <p class="label">Open for Work</p>
+        <h2 id="contact-heading">Let's build something remarkable.</h2>
+        <p>
+          I work independently to deliver premium UI, animations, and interactive
+          web experiences. Got a project? Let's talk.
+        </p>
 
-      <div class="field-row">
-        <input type="text" name="name" placeholder="Name" required />
-        <input type="email" name="email" placeholder="Email" required />
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/kasetty-shashi-teja-49a474294/" target="_blank" rel="noopener noreferrer" class="contact-pill linkedin">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:shashitejakasetty@gmail.com" class="contact-pill mail">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email Me
+          </a>
+          <a href="https://wa.me/919542152630" target="_blank" rel="noopener noreferrer" class="contact-pill whatsapp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </div>
       </div>
 
-      <textarea name="message"
-                placeholder="Project, goals, timeline"
-                required></textarea>
+      <div class="contact-right" data-reveal>
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/mqealore"
+          method="POST"
+          novalidate
+          aria-label="Contact form"
+        >
+          <div class="field-row">
+            <div class="field">
+              <label for="name" class="sr-only">Your name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="email" class="sr-only">Your email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="message" class="sr-only">Your message</label>
+            <textarea id="message" name="message" placeholder="Project, goals, timeline..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary submit-btn">
+            <span>Send Project Brief</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
 
-      <button class="btn-primary" type="submit">
-        SEND PROJECT BRIEF
-      </button>
-
-    </form>
-<!-- CONTACT BUTTONS -->
-<div class="contact-buttons">
-
-  <a href="https://www.linkedin.com/in/kasetty-shashi-teja-49a474294/"
-     target="_blank"
-     class="social-btn linkedin">
-    LinkedIn
-  </a>
-
-  <a href="mailto:shashitejakasetty@gmail.com"
-     class="social-btn mail">
-    Email
-  </a>
-
-  <a href="https://wa.me/919542152630"
-     target="_blank"
-     class="social-btn whatsapp">
-    WhatsApp
-  </a>
-
-</div>
-
-
-
-  </div>
-</section>
+    </div>
+  </section>
 
 </main>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <p>© 2025 Kasetty Shashi Teja · Bengaluru, India</p>
+  <p>Frontend Developer & Web Designer · <a href="mailto:shashitejakasetty@gmail.com">shashitejakasetty@gmail.com</a></p>
+</footer>
 
 <script src="script.js"></script>
 </body>
